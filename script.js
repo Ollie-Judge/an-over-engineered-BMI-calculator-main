@@ -12,12 +12,19 @@ const start = () => {
     };
   }
 
+  const chooseUnits = document.getElementById("chooseUnits").value;
+
+  if (chooseUnits === "Impreial") {
+    console.log("ayy");
+  }
   const nameInput = document.getElementById("name").value;
   const heightInput = document.getElementById("height").value;
   const weightInput = document.getElementById("weight").value;
+
   console.log(nameInput);
   console.log(heightInput);
   console.log(weightInput);
+  console.log(chooseUnits);
 
   const a = new Person(nameInput, heightInput, weightInput);
   console.log(a);
