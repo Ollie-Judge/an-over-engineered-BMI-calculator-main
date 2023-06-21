@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css">
+    <title>Over engineered bmi calculator</title>
+  </head>
+  <body>
+    <div id="userInputDiv">
+      <label for="cars">Choose what units you want to use:</label>
+
+      <select name="chooseUnits" id="chooseUnits">
+        <option value="impreial">Impreial (ft and lbs)</option>
+        <option value="metric">Metric (metres and kg)</option>
+      </select>
+  
+      <input type="text" id="name" placeholder="name" required/>
+      <input type="number" id="height" placeholder="height" required/>
+      <input type="number" id="weight" placeholder="weight" required/>
+  
+      <input type="submit" onclick="start()"></input>
+
+    </div>
+
+    <div id="outputDiv">
+
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
