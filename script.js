@@ -14,12 +14,16 @@ const start = () => {
 
   const chooseUnits = document.getElementById("chooseUnits").value;
 
-  if (chooseUnits === "Impreial") {
-    console.log("ayy");
-  }
-  const nameInput = document.getElementById("name").value;
   const heightInput = document.getElementById("height").value;
   const weightInput = document.getElementById("weight").value;
+
+  if (chooseUnits === "Impreial") {
+    let convertedHeight = heightInput * 0.3048;
+    let convertedWeight = weightInput * 0.45359237;
+    console.log(convertedHeight);
+    console.log(convertedWeight);
+  }
+  const nameInput = document.getElementById("name").value;
 
   console.log(nameInput);
   console.log(heightInput);
@@ -27,7 +31,6 @@ const start = () => {
   console.log(chooseUnits);
 
   const a = new Person(nameInput, heightInput, weightInput);
-  console.log(a);
   a.calcBmi();
 };
 
