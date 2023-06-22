@@ -26,9 +26,9 @@ const start = () => {
 
     textLocation.innerText = `${a.name}, your height is: ${
       a.height
-    }, your weight is: ${
+    }m, your weight is: ${
       a.weight
-    }, based off of the data you've given, your BMi is: ${a.calcBmi()}`;
+    }kg, based off of the data you've given, your BMi is: ${a.calcBmi()}`;
     outputDiv.appendChild(textLocation);
   } else if (chooseUnits === "Impreial") {
     let convertedHeight = heightInput * 0.3048;
