@@ -3,11 +3,11 @@ const chooseUnits = document.getElementById("chooseUnits").value;
 document.getElementById("chooseUnits").onchange = function () {
   console.log(this.value);
   if (this.value === "Metric") {
-    document.getElementById("height").placeholder = "height in m";
-    document.getElementById("weight").placeholder = "weight in kg";
+    document.getElementById("height").placeholder = "Height in m";
+    document.getElementById("weight").placeholder = "Weight in kg";
   } else if (this.value === "Imperial") {
-    document.getElementById("height").placeholder = "height in ft";
-    document.getElementById("weight").placeholder = "weight in lbs";
+    document.getElementById("height").placeholder = "Height in ft";
+    document.getElementById("weight").placeholder = "Weight in lbs";
   }
 };
 
