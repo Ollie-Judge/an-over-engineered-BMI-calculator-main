@@ -1,5 +1,17 @@
+const chooseUnits = document.getElementById("chooseUnits").value;
+
+document.getElementById("chooseUnits").onchange = function () {
+  console.log(this.value);
+  if (this.value === "Metric") {
+    document.getElementById("height").placeholder = "height in m";
+    document.getElementById("weight").placeholder = "weight in kg";
+  } else if (this.value === "Imperial") {
+    document.getElementById("height").placeholder = "height in ft";
+    document.getElementById("weight").placeholder = "weight in lbs";
+  }
+};
+
 const start = () => {
-  const chooseUnits = document.getElementById("chooseUnits").value;
   const nameInput = document.getElementById("name").value;
   const heightInput = document.getElementById("height").value;
   const weightInput = document.getElementById("weight").value;
