@@ -6,6 +6,8 @@ const start = () => {
 
   let outputDiv = document.getElementById("outputDiv");
 
+  document.getElementById("resultExplanation").remove();
+
   class Person {
     constructor(name, height, weight) {
       this.name = name;

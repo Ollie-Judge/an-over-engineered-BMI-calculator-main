@@ -1,3 +1,72 @@
-#userInputDiv {
+#userInputDiv,
+#outputDiv {
+  width: 50%;
+  margin: 35px auto;
+  padding: 25px;
+  border: 1px solid black;
+  border-radius: 25px;
+  background: #fad31b;
+  justify-content: center;
   text-align: center;
+}
+
+#nameDiv,
+#weightDiv,
+#heightDiv {
+  margin: 25px auto;
+}
+
+#name,
+#weight,
+#height {
+  width: 90%;
+  padding: 15px 10px;
+}
+
+select {
+  text-align: center;
+  width: 90%;
+}
+
+#submitButton {
+  padding: 10px 15px;
+  border: 1px solid black;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+#submitButton:hover {
+  background: #1cad69;
+}
+
+@media (min-width: 768px) {
+  #userInputDiv,
+  #outputDiv {
+    margin: 35px auto;
+    width: 50%;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+  }
+}
+
+@media (min-width: 1025px) {
+  #userInputDiv,
+  #outputDiv {
+    margin: 15px auto;
+    width: 50%;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+  }
+}
+@media (min-width: 2100px) {
+  #userInputDiv,
+  #outputDiv {
+    margin: 35px auto;
+    width: 50%;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+  }
 }

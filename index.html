@@ -15,16 +15,28 @@
         <option value="Impreial">Impreial (ft and lbs)</option>
       </select>
   
-      <input type="text" id="name" placeholder="name" required/>
-      <input type="number" maxlength="4" step="0.01" id="height" placeholder="height in metres" required/>
-      <input type="number" maxlength="4" step="0.01" id="weight" placeholder="weight in kg" required/>
+      <div id="nameDiv">
+        <input type="text" id="name" placeholder="name" required/>
+      </div>
+
+      <div id="weightDiv">
+        <input type="number" maxlength="4" step="0.01" id="weight" placeholder="weight in kg" required/>
+      </div>
+
+      <div id="heightDiv">
+        <input type="number" maxlength="4" step="0.01" id="height" placeholder="height in metres" required/>
+      </div>
   
-      <input type="submit" onclick="start()"></input>
+      <div id="buttonDiv">
+        <input id="submitButton" type="submit" onclick="start()"></input>
+      </div>
 
     </div>
 
     <div id="outputDiv">
-
+      <div>
+        <p id="resultExplanation">Your Result will appear here</p>
+      </div>
     </div>
 
     <script src="script.js"></script>
