@@ -1,4 +1,11 @@
 const start = () => {
+  const chooseUnits = document.getElementById("chooseUnits").value;
+  const nameInput = document.getElementById("name").value;
+  const heightInput = document.getElementById("height").value;
+  const weightInput = document.getElementById("weight").value;
+
+  let outputDiv = document.getElementById("outputDiv");
+
   class Person {
     constructor(name, height, weight) {
       this.name = name;
@@ -6,32 +13,36 @@ const start = () => {
       this.weight = weight;
     }
     calcBmi = () => {
-      console.log(
-        this.name + "s, BMI is: " + this.weight / (this.height * this.height)
-      );
+      return this.weight / (this.height * this.height);
     };
   }
 
-  const chooseUnits = document.getElementById("chooseUnits").value;
+  let textLocation = document.createElement("p");
 
-  const heightInput = document.getElementById("height").value;
-  const weightInput = document.getElementById("weight").value;
+  if (chooseUnits === "Metric") {
+    const a = new Person(nameInput, heightInput, weightInput);
 
-  if (chooseUnits === "Impreial") {
+    textLocation.innerText = `${a.name}, your height is: ${
+      a.height
+    }, your weight is: ${
+      a.weight
+    }, based off of the data you've given, your BMi is: ${a.calcBmi()}`;
+    outputDiv.appendChild(textLocation);
+    return convertedHeight, convertedWeight;
+  } else if (chooseUnits === "Impreial") {
     let convertedHeight = heightInput * 0.3048;
     let convertedWeight = weightInput * 0.45359237;
-    console.log(convertedHeight);
-    console.log(convertedWeight);
+
+    const a = new Person(nameInput, convertedHeight, convertedWeight);
+
+    textLocation.innerText = `${a.name}, your height is: ${
+      a.height
+    }, your weight is: ${
+      a.weight
+    }, based off of the data you've given, your BMi is: ${a.calcBmi()}`;
+    outputDiv.appendChild(textLocation);
+    return convertedHeight, convertedWeight;
   }
-  const nameInput = document.getElementById("name").value;
-
-  console.log(nameInput);
-  console.log(heightInput);
-  console.log(weightInput);
-  console.log(chooseUnits);
-
-  const a = new Person(nameInput, heightInput, weightInput);
-  a.calcBmi();
 };
 
 /*const mark = new Person("Mark", "1.69", "78");
