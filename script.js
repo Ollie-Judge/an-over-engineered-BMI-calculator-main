@@ -42,7 +42,7 @@ const start = () => {
       a.weight
     }kg, based off of the data you've given, your BMi is: ${a.calcBmi()}`;
     outputDiv.appendChild(textLocation);
-  } else if (chooseUnits === "Impreial") {
+  } else if (chooseUnits === "Imperial") {
     let convertedHeight = heightInput * 0.3048;
     let convertedWeight = weightInput * 0.45359237;
 
