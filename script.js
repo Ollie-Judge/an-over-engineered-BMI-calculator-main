@@ -28,7 +28,6 @@ const start = () => {
       a.weight
     }, based off of the data you've given, your BMi is: ${a.calcBmi()}`;
     outputDiv.appendChild(textLocation);
-    return convertedHeight, convertedWeight;
   } else if (chooseUnits === "Impreial") {
     let convertedHeight = heightInput * 0.3048;
     let convertedWeight = weightInput * 0.45359237;
@@ -41,7 +40,6 @@ const start = () => {
       a.weight
     }, based off of the data you've given, your BMi is: ${a.calcBmi()}`;
     outputDiv.appendChild(textLocation);
-    return convertedHeight, convertedWeight;
   }
 };
 
