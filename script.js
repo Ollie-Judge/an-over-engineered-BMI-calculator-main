@@ -13,7 +13,7 @@ const start = () => {
       this.weight = weight;
     }
     calcBmi = () => {
-      return this.weight / (this.height * this.height);
+      return Math.floor(this.weight / (this.height * this.height));
     };
   }
 
