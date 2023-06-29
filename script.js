@@ -1,24 +1,40 @@
-const chooseUnits = document.getElementById("chooseUnits").value;
-
 document.getElementById("chooseUnits").onchange = function () {
-  console.log(this.value);
   if (this.value === "Metric") {
     document.getElementById("height").placeholder = "Height in m";
     document.getElementById("weight").placeholder = "Weight in kg";
   } else if (this.value === "Imperial") {
-    document.getElementById("height").placeholder = "Height in ft";
+    document.getElementById("height").placeholder = "ft";
+    let heightDiv = document.getElementById("heightDiv");
+    let inchesInput = document.createElement("input");
+    inchesInput.setAttribute("type", "number");
+    inchesInput.setAttribute("id", "inches");
+    inchesInput.setAttribute("placeholder", "inches");
+    inchesInput.setAttribute("maxlength", "4");
+    heightDiv.appendChild(inchesInput);
     document.getElementById("weight").placeholder = "Weight in lbs";
   }
 };
 
+document.getElementById("userInputDiv");
+let textLocation = document.createElement("input");
+
 const start = () => {
   const nameInput = document.getElementById("name").value;
-  const heightInput = document.getElementById("height").value;
+  let heightInput = document.getElementById("height").value;
+  const inchesInput = document.getElementById("inches").value;
   const weightInput = document.getElementById("weight").value;
+
+  const chooseUnits = document.getElementById("chooseUnits").value;
 
   let outputDiv = document.getElementById("outputDiv");
 
   document.getElementById("resultExplanation").remove();
+
+  if (chooseUnits === "Imperial") {
+    let convertedFeetToInches = heightInput * 12;
+    heightInput = parseInt(inchesInput) + parseInt(convertedFeetToInches);
+    console.log(heightInput);
+  }
 
   class Person {
     constructor(name, height, weight) {
@@ -27,7 +43,11 @@ const start = () => {
       this.weight = weight;
     }
     calcBmi = () => {
-      return Math.floor(this.weight / (this.height * this.height));
+      if (chooseUnits === "Metric") {
+        return Math.floor(this.weight / (this.height * this.height));
+      } else {
+        return Math.floor((this.weight / (this.height * this.height)) * 703);
+      }
     };
   }
 
@@ -35,25 +55,22 @@ const start = () => {
 
   if (chooseUnits === "Metric") {
     const a = new Person(nameInput, heightInput, weightInput);
-
     textLocation.innerText = `${a.name}, your height is: ${
-      a.height
+      Math.floor(a.height * 100) / 100
     }m, your weight is: ${
-      a.weight
+      Math.floor(a.weight * 100) / 100
     }kg, based off of the data you've given, your BMi is: ${a.calcBmi()}`;
     outputDiv.appendChild(textLocation);
   } else if (chooseUnits === "Imperial") {
-    let convertedHeight = heightInput * 0.3048;
-    let convertedWeight = weightInput * 0.45359237;
-
-    const a = new Person(nameInput, convertedHeight, convertedWeight);
-
-    textLocation.innerText = `${a.name}, your height is: ${
-      a.height
-    }, your weight is: ${
-      a.weight
-    }, based off of the data you've given, your BMi is: ${a.calcBmi()}`;
+    const a = new Person(nameInput, heightInput, weightInput);
+    textLocation.innerText = `${a.name}, your height is: ${Math.floor(
+      a.height / 12
+    )} ft ${inchesInput} inches, your weight is: ${
+      Math.floor(a.weight * 100) / 100
+    }lbs, based off of the data you've given, your BMi is: ${a.calcBmi()}`;
     outputDiv.appendChild(textLocation);
+  } else {
+    textLocation.innerText = "Catastrophic Error, run for your life";
   }
 };
 
