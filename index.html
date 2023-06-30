@@ -8,22 +8,28 @@
   </head>
   <body>
     <div id="userInputDiv">
-      <h2>BMI Calculator</h2>
+      <label for="cars">Choose the units you want to use:</label>
+
+      <select name="chooseUnits" id="chooseUnits" onchange="chooseUnitsChange()">
+        <option selected disabled hidden>Pick a measurement unit</option>
+        <option value="Metric">Metric (metres and kg)</option>
+        <option value="Imperial">Impreial (ft and lbs)</option>
+      </select>
   
       <div id="nameDiv">
         <input type="text" id="name" placeholder="Name" required/>
       </div>
 
       <div id="weightDiv">
-        <input type="number" maxlength="4" step="0.01" id="weight" placeholder="Weight  in kg" required/>
+        <input type="number" maxlength="4" step="0.01" id="weight" placeholder="Choose a unit" required/>
       </div>
 
       <div id="heightDiv">
-        <input type="number" maxlength="4" step="0.01" id="height" placeholder="Height in m" required/>
+        <input type="number" maxlength="4" step="0.01" id="height" placeholder="Choose a unit" required/>
       </div>
   
       <div id="buttonDiv">
-        <input id="submitButton" type="submit" onclick="start()"></input>
+        <input id="submitButton" type="submit"></input>
       </div>
 
     </div>
