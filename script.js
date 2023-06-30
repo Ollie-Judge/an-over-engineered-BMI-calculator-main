@@ -97,7 +97,7 @@ const startImperial = () => {
   );
   textLocation.innerText = `${a.name}, your height is: ${Math.floor(
     a.heightFt
-  )} ft ${heightInputInches.value} inches, your weight is: ${
+  )} ft ${a.heightInches} inches, your weight is: ${
     Math.floor(a.weight * 100) / 100
   }lbs, based off of the data you've given, your BMi is: ${a.calcBmi()}`;
   outputDiv.appendChild(textLocation);
